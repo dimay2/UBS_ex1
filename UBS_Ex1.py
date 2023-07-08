@@ -65,6 +65,7 @@ def cve_api_func(v_pubStartDate, v_pubEndDate):
                 for description_item in cve_item['cve']['descriptions']:
                     if description_item['lang']=='en':
                         description=str(description_item['value'])
+                        description=description[:400]
                         break
                 for ref_item in cve_item['cve']['references']:
                     #print(ref_item)
